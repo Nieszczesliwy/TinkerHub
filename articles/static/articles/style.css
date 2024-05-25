@@ -1,0 +1,14 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #ac5a5a;
+    color: #333;
+}
+
+article {
+    margin-top: 20px;
+    padding: 20px;
+    background: #741515;
+}
