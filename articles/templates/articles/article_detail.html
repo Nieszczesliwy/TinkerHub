@@ -1,15 +1,18 @@
-{% load static %}
+{% extends "articles/template.html" %}
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{ article.title }}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'articles/style.css' %}">
+    <title>{{ context.title }}</title>
 </head>
 <body>
-    <h1>{{ article.title }}</h1>
-    <p>By {{ article.author }} on {{ article.published_date }}</p>
-    <p>{{ article.content }}</p>
+        
+    {% block content %}
+        <h1>{{ context.title }}</h1>
+        <p>By {{ context.author }} - {{ context.created_at }}</p>
+        <p>{{ context.content }}</p>
+    {% endblock %}
+    
 </body>
 </html>

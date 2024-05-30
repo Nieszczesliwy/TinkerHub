@@ -5,9 +5,9 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
+    path("api-auth/", include('rest_framework.urls')),
     path("admin/", admin.site.urls),
-    path('articles/', include('articles.urls')),
-]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path("auth/", include('authentication.urls')),
+    path("", include('articles.urls')),
+    
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

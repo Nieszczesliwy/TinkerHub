@@ -1,8 +1,9 @@
 from django.urls import path
-from . import views
+from .views import *
 
 urlpatterns = [
-    path('', views.article_list, name='article_list'),
-    path('<int:id>/', views.article_detail, name='article_detail'),
+    path('', renderHomePage, name='homepage'),
+    path('create_article/', createArticle, name='create_article'),
+    path('single/<int:aID>', renderSingleArticle, name='create_article'),
 ]
 
